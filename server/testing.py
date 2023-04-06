@@ -14,5 +14,13 @@ def home():
 def login():
     return render_template('login.html')
 
+@app.route('/logout')
+def logout():
+    return render_template('login.html')
+
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
