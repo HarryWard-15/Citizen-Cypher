@@ -1,0 +1,24 @@
+!!! FULL REFACTORING OF PROJECT FOLDER
+- Purpose: allow project to be distributed via git
+- also ensures that between clones/commits/whatever the project is distributed correctly
+- side note: I found it difficult to get the project running from the first clone - this aims to resolve that.
+
+- Updated readme file to include installation instructions
+
+- Switched gitignore to a python template gitignore from HTML gitignore
+
+- Refactoring HTML pages so that they are a little more modular & fitting with Flask syntax and whatnot
+
+- Following lots of Flask megatutorial methods of implementing functionality!
+
+----------------------------------------------------------------
+
+- Separated login and signup pages for sake of better presentation
+
+
+----------------------------------------------------
+Have started the database connection, was super dicky but got it to work, I'm going to write all the seeds and schema stuff.
+
+only minor changed to the front end with fixing the nav bar and a view visual errors in the signup/login boxes.
+
+I think our next plan should be to sit together and discuss out schema so i can write it fully and discuss how its going to interact.
