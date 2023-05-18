@@ -1,9 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-# from flask_migrate import Migrate
-# import mysql.connector
-
 import sqlconnector 
 
 app = Flask(__name__)
@@ -14,7 +11,6 @@ app.config['SECRET_KEY'] = 'hellmadsecret'
 app.app_context().push()
 
 db = SQLAlchemy(app)
-
 sqlconnector.initialise_db(db)
 
 @app.route('/')
@@ -39,7 +35,6 @@ def login():
         if account:
             session['loggedIn'] = True
             session['realname'] = account[1]
-            session['email'] = account[2]
             return redirect(url_for('home'))
         else:
             msg = "Please check credentials!"
@@ -75,7 +70,9 @@ def signup():
 
 @app.route('/logout')
 def logout():
-    return render_template('login.html')
+    session.pop('loggedIn', None)
+    session.pop('realname', None)
+    return redirect(url_for('login'))
 
 @app.route('/game')
 def game():
