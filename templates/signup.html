@@ -17,22 +17,27 @@
                 </div>
                 <br>
                 <div class="welcomeMessage">
-                    <h1>Sign up for ......!</h1>
+                    <h1>Sign up for Citizen Cypher</h1>
                     <h3>To create an account, enter your credentials!</h3>
                 </div>
-                <div class="real-name">
-                    <input type="real-name" placeholder="Name">
-                </div>
-                <div class="email">
-                    <input type="email" placeholder="Email ID">
-                </div>
-                <div class="password">
-                    <input type="password" placeholder="Password">
-                </div>
-                <br>
-                <div class="signup">
-                    <button type="submit" class="sign-btn button">SIGN UP</button>
-                </div>
+
+                <form method="post" action="#">
+                    <div class="realname">
+                        <input id="realname" name="realname" type="realname" placeholder="Name">
+                    </div>
+                    <div class="email">
+                        <input id="email" name="email" type="email" placeholder="Email ID">
+                    </div>
+                    <div class="password">
+                        <input id="password" name="password" type="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <div class="msg">{{ msg }}</div>
+                    <div class="signup">
+                        <button type="submit" class="sign-btn button">SIGN UP</button>
+                    </div>
+                </form>
+                
             </div>
             <div class="lowerBox">
                 <h4>If you already have an account, login instead:</h4>

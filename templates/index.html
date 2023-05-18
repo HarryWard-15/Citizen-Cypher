@@ -1,4 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>This is the index page</h1> 
+{% if session['loggedIn'] == True %}
+<h2>Welcome, {{ session['realname'] }}</h2>
+{% else %}
+<h2>You are not logged in.</h2>
+{% endif %}
 {% endblock %}

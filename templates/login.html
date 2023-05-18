@@ -16,19 +16,22 @@
                 </div>
                 <br>
                 <div class="welcomeMessage">
-                    <h1>Login to ......!</h1>
+                    <h1>Login to Citizen Cypher</h1>
                     <h3>Please enter your credentials.</h3>
                 </div>
-                <div class="email">
-                    <input type="email" placeholder="Email ID">
-                </div>
-                <div class="password">
-                    <input type="password" placeholder="Password">
-                </div>
-                <br>
-                <div class="login">
-                    <button type="submit" class="login-btn button">LOGIN</button>
-                </div>
+                <form method="post" action="{{ url_for('login') }}">
+                    <div class="email">
+                        <input id="email" name="email" type="email" placeholder="Email ID">
+                    </div>
+                    <div class="password">
+                        <input id="password" name="password" type="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <div class="msg">{{ msg }}</div>
+                    <div class="login">
+                        <button type="submit" class="login-btn button">LOGIN</button>
+                    </div>
+                </form>
             </div>
             <div class="lowerBox">
                 <h4>If you don't have an account, sign up here:</h4>

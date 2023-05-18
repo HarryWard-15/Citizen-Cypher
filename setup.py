@@ -10,8 +10,10 @@ setup(
         'flask',
         'flask-wtf',
         'Flask-SQLAlchemy',
-        'mysql-connector',
+        'mysql-connector-python',
         'pymysql',
         'cryptography',
+        'Flask-Migrate'
+        'flask-login'
     ]
 )
