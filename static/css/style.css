@@ -114,9 +114,27 @@ li {
     margin-right: 250px;
 }
 
+#play-game {
+    margin: auto;
+}
+
 .box-text {
     color:black;
 }
+
+.game-box {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    border: solid 21px;
+    padding: 100px;
+}
+
+.game-container {
+    width: 70%;
+    margin: auto;
+}
+
 
 @keyframes fade-in {
     from { opacity: 0; }
