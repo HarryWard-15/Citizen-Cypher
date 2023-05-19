@@ -1,23 +1,6 @@
 ## CitizenCypher
 
-# Installation 
-```
-python -m venv venv
-```
-```
-cd CITS3403-Project
-```
-```
-source venv/Scripts/activate    (you will have the change the file extension to either bat or ps1)
-```
-```
-python venv/Scripts/setup.py install    (not 100% if this works, run activate first and then try flask run, if not then try this with and without the install at the end. I think we will have to look into this, if nothing works then just manually run 'pip install' on all the packages in the setup.py  )
-```
-```
-flask run 
-```
-
-[![Prototype image of the Out and About site on computer and mobile phone. The background is the company purple. ](client/src/assets/readme_img/prototype.png)](https://outnabout.herokuapp.com/)
+[![Prototype image of the citizen cypher site on computer and mobile phone. The background is the company purple. ](client/src/assets/readme_img/prototype.png)](https://outnabout.herokuapp.com/)
 
 ---
 
@@ -46,6 +29,8 @@ Are you bored out of your brains? Play Citizen Cypher today!
 (link here)
 
 ## Installation 
+
+Whilst we recommend using the application on the deployed site, if you wish to run it on your local machine, you will need to setup your .env variables for the MySQL database
 
 Download and navigate to the root folder, run the following commands in GitBash or VSCode Terminal:
 
