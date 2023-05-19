@@ -1,5 +1,7 @@
 import mysql.connector
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 
 cnx = mysql.connector.connect(
         host="localhost",
@@ -16,16 +18,23 @@ def initialise_db(db_obj):
     my_cursor.execute("USE citizencypher")
 
     class User(db_obj.Model):
+        __tablename__ = 'user'
+
         id = db_obj.Column(db_obj.Integer, primary_key=True)
         realname = db_obj.Column(db_obj.String(50), nullable=False)
         email = db_obj.Column(db_obj.String(100), nullable=False, unique=True)
         password = db_obj.Column(db_obj.String(128), nullable=False)
 
+        previous_games = relationship("PreviousGame", backref="user")
+
         def __repr__(self):
             return '<Name %r>' % self.realname
 
-    class PreviousGames(db_obj.Model):
-        id = db_obj.Column(db_obj.Integer, primary_key=True)
+    class PreviousGame(db_obj.Model):
+        __tablename__ = 'previous_game'
+
+        id = db_obj.Column(db_obj.Integer, primary_key=True, nullable=False)
+        userId = db_obj.Column(db_obj.Integer, ForeignKey('user.id'), nullable=False)
         causeOfDeath = db_obj.Column(db_obj.String(64), nullable=False)
         daysSurvived = db_obj.Column(db_obj.Integer, nullable=False)
 
@@ -33,7 +42,8 @@ def initialise_db(db_obj):
             return '<PreviousGames %r>' % self.daysSurvived
 
     class currentGame(db_obj.Model):
-        id = db_obj.Column(db_obj.Integer, primary_key)
+        __tablename__ = 'current_game'
+        id = db_obj.Column(db_obj.Integer, primary_key=True)
         daysAlive = db_obj.Column(db_obj.Integer, nullable=False)
         happiness = db_obj.Column(db_obj.Integer, nullable=False)
         saturation = db_obj.Column(db_obj.Integer, nullable=False)

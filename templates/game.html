@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Game page</h1>
-
 {% if session['loggedIn'] == True %}
 <h2>Test content for user {{ session['realname'] }}</h2>
 <br>
 
 <div class="game-container">
     <div class="row justify-content-center">
-        <div class="game-box"></div>
-        <br>
-        <p></p>
-        <div class="game-buttons">
-            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
-            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+        <div class="game-box" id="gameBox">
+            <h5>Sleep: <span id='sleepStat'>blah</span></h5>
+            <h5>Happiness: <span id='happinessStat'></span></h5>
+            <h5>Fitness: <span id='fitnessStat'></span></h5>
+            <h5>Saturation: <span id='saturationStat'></span></h5>
+        </div>
+        <br/>
+        <h3 id="question">Choose Your Next Super Fun Activity</h3>
+        <br/>
+        <div class="game-buttons" id="answers">
+            <a id="0" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+            <a id="1" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
             <br>
-            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
-            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+            <a id="2" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+            <a id="3" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
         </div>
         <br>
         
@@ -38,6 +43,8 @@
 <p>Click <a href="{{ url_for('login')}}">here</a> to log in.</p>
 
 {% endif %}
+
+<script src="static/js/game.js"></script>
 
 
 {% endblock %}
