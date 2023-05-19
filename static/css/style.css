@@ -1,17 +1,20 @@
 body, html {
     height:100%;
     margin:0;
-    overflow:hidden;
-}
+    overflow-x:hidden;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/img/bg1.jpg') no-repeat center center fixed;
+    /* background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/img/bg1.jpg'); */
+    background-size: cover;
+} 
 
-.bg {
+/* .bg {
     height: 100%;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/img/bg1.jpg');
     background-color: #141414 !important;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
     background-position: center;
-}
+} */
 
 .container {
     text-align: center;
@@ -33,13 +36,18 @@ input {
     border-radius: 5px;
 }
 
+.box-text {
+    padding: 10px;
+}
+
 .welcomeMessage {
     padding-top: 75px;
     padding-bottom: 25px;
 }
 
 .upperBox {
-    width: 60%;
+    /* width: 60%; */
+    max-width: 60%;
     margin: auto;
     background-color: white;
     opacity: 0.6;
@@ -57,7 +65,8 @@ input {
  );
     opacity: 0.6;
     border-radius: 0  0 25px  25px;
-    width: 50%;
+    /* width: 50%; */
+    max-width: 50%;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -94,25 +103,36 @@ input {
     background-color: black;
 }
 
+.index-login, .index-signup {
+    color: lightgrey;
+    margin: 7px;
+    width: 150px;
+}
+
+.index-login:hover, .index-signup:hover {
+    color: black;
+    background-color: lightgrey;
+}
+
 img {
     position: absolute;
     transform: translateY(-50%) translateX(-50%);
 }
 
-ul {
+/* ul {
     padding: 20px 0px 20px 100px;
     margin-left: 250px;
-}
+} */
 
-li {
+/* li {
     line-height: 100%;
     font-size: larger;
     font-weight: 600;
-}
+} */
 
-.btn {
+/* .btn {
     margin-right: 250px;
-}
+} */
 
 #play-game {
     margin: auto;
