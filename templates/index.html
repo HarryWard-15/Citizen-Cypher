@@ -7,7 +7,8 @@
 <h2>Thanks for logging in, {{ session['realname'] }}!</h2>
 <br>
 <div class="row justify-content-center">
-    <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+    <a href="{{ url_for('game')}}"  ><button class="button general-button">PLAY GAME</button></a>
+    <a href="{{ url_for('history')}}"  ><button class="button general-button">SHOW GAME HISTORY</button></a>
 </div>
 <br>
 <p><a href="{{ url_for('logout')}}">Not you?</a></p>
@@ -18,8 +19,8 @@
 <br>
 <p>Create an account or log in to play!</p>
 
-<a href="{{ url_for('login')}}"><button class="button index-login">LOG IN</button></a>
-<a href="{{ url_for('signup')}}"><button class="button index-signup">SIGN UP</button></a>
+<a href="{{ url_for('login')}}"><button class="button general-button">LOG IN</button></a>
+<a href="{{ url_for('signup')}}"><button class="button general-button">SIGN UP</button></a>
 
 
 {% endif %}

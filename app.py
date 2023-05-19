@@ -13,7 +13,6 @@ app.app_context().push()
 db = SQLAlchemy(app)
 sqlconnector.initialise_db(db)
 
-
 import routes
 
 if __name__ == '__main__':
