@@ -57,6 +57,10 @@ def signup():
                 print(ud)
             
             msg = "Account successfully registered!"
+            session['loggedIn'] = True
+            session['realname'] = realname
+            return redirect(url_for('home'))
+
     return render_template('signup.html', msg=msg)
 
 @app.route('/logout')
