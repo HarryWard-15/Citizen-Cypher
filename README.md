@@ -31,7 +31,7 @@ Are you bored out of your brains? Play Citizen Cypher today!
 
 ---
 
-[About](#about) ✦ [Deployment](#deployment) ✦ [Technologies Used](#technologies-used) ✦ [Wire Frame](#wire-frame) ✦ [Future Developments](#future-developments) ✦ [Credits](#credits)✦ [Resources](#resources) ✦ [License](#license) ✦ [Contact](#contact)
+[About](#about) ✦ [Deployment](#deployment) ✦ [Technologies Used](#technologies-used) ✦ [Wire Frame](#wire-frame) ✦  [Resources](#resources) ✦ [License](#license) ✦ [Contact](#contact)
 
 ---
 
@@ -45,11 +45,43 @@ Are you bored out of your brains? Play Citizen Cypher today!
 
 (link here)
 
+## Installation 
+
+Download and navigate to the root folder, run the following commands in GitBash or VSCode Terminal:
+
+For windows users:
+```
+python3 -m pip install -r requirements.txt
+```
+```
+python3 -m venv venv
+```
+```
+.\venv\Scripts\activate
+```
+```
+flask run
+```
+
+For Mac users: 
+```
+python3 -m pip install -r requirements.txt
+```
+```
+python3 -m venv venv
+```
+```
+source .\venv\Scripts\activate
+```
+```
+flask run
+```
+
 ## Technologies Used
 
 There is a large range of technologies used for this application.
 
-- Flash/Python - used to create the backend server
+- Flask/Python - used to create the backend server
 - MySQL - SQLAlchemy - used to create the database and schema.
 
 ## Wire Frame
