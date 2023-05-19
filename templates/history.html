@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% if session['loggedIn'] == True %}
+<h1>Game history for {{ session['realname'] }}</h1>
+<br>
+<div class="row justify-content-center">
+    <a href="{{ url_for('game')}}"  ><button class="button general-button">START NEW GAME</button></a>
+</div>
+<br>
+<p><a href="{{ url_for('home')}}">Go home</a></p>
+
+
+{% else %}
+<h2>You are not logged in.</h2>
+<br>
+<p>Create an account or log in to play!</p>
+
+<a href="{{ url_for('login')}}"><button class="button index-login">LOG IN</button></a>
+<a href="{{ url_for('signup')}}"><button class="button index-signup">SIGN UP</button></a>
+
+
+{% endif %}
+{% endblock %}

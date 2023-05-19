@@ -33,7 +33,7 @@ def initialise_db(db_obj):
             return '<PreviousGames %r>' % self.daysSurvived
 
     class currentGame(db_obj.Model):
-        id = db_obj.Column(db_obj.Integer, primary_key)
+        id = db_obj.Column(db_obj.Integer, primary_key=True)
         daysAlive = db_obj.Column(db_obj.Integer, nullable=False)
         happiness = db_obj.Column(db_obj.Integer, nullable=False)
         saturation = db_obj.Column(db_obj.Integer, nullable=False)

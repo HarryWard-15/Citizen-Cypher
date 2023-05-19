@@ -81,7 +81,7 @@ input {
 
 .button {
     margin: 7px;
-    width: 150px;
+    max-width: 900px;
     background: none;
     border: none;
     font-size: 30px;
@@ -103,13 +103,13 @@ input {
     background-color: black;
 }
 
-.index-login, .index-signup {
+.general-button {
     color: lightgrey;
-    margin: 7px;
-    width: 150px;
+    margin: 10px;
+    
 }
 
-.index-login:hover, .index-signup:hover {
+.general-button:hover {
     color: black;
     background-color: lightgrey;
 }
