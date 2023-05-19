@@ -23,6 +23,15 @@ def initialise_db(db_obj):
 
         def __repr__(self):
             return '<Name %r>' % self.realname
+
+    class PreviousGames(db_obj.Model):
+        id = db_obj.Column(db_obj.Integer, primary_key=True)
+        causeOfDeath = db_obj.Column(db_obj.String(64), nullable=False)
+        daysSurvived = db_obj.Column(db_obj.Integer, nullable=False)
+
+        def __repr__(self):
+            return '<PreviousGames %r>' % self.daysSurvived
+
         
     db_obj.create_all()
 
