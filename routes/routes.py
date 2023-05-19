@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for, request, flash, ses
 from datetime import datetime
 from app import app
 from app import db
-import sqlconnector 
+import connection.sqlconnector as sqlconnector
 
 @app.route('/')
 @app.route('/index')
