@@ -1,7 +1,16 @@
-body {
-    background-image: url('/static/img/bg1.jpg');
-    /* background-repeat: no-repeat; */
+body, html {
+    height:100%;
+    margin:0;
+    overflow:hidden;
+}
+
+.bg {
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/img/bg1.jpg');
+    background-color: #141414 !important;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -10,6 +19,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.page-content {
+    color: lightgrey;
+    animation: fade-in;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(.16,.73,.3,.89);
 }
 
 input {
@@ -28,6 +44,7 @@ input {
     background-color: white;
     opacity: 0.6;
     border-radius: 50px;
+    padding-top: 120px;
     padding-bottom: 50px;
     box-shadow: 10px 10px 20px black;
     margin-bottom: 2px;
@@ -65,7 +82,14 @@ input {
     transition-timing-function: cubic-bezier(.16,.73,.3,.89);
 }
 
-.button:hover {
+.nav-link {
+    background: none;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(.16,.73,.3,.89);
+}
+
+.button:hover, .nav-link:hover {
     color: white;
     background-color: black;
 }
@@ -88,4 +112,31 @@ li {
 
 .btn {
     margin-right: 250px;
+}
+
+#play-game {
+    margin: auto;
+}
+
+.box-text {
+    color:black;
+}
+
+.game-box {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    border: solid 21px;
+    padding: 100px;
+}
+
+.game-container {
+    width: 70%;
+    margin: auto;
+}
+
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

@@ -1,5 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>This is the gaming page</h1> 
-<p>this is where all of the gameplay will take place</p>
+<h1>Game page</h1>
+
+{% if session['loggedIn'] == True %}
+<h2>Test content for user {{ session['realname'] }}</h2>
+<br>
+
+<div class="game-container">
+    <div class="row justify-content-center">
+        <div class="game-box"></div>
+        <br>
+        <p></p>
+        <div class="game-buttons">
+            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+            <br>
+            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+            <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+        </div>
+    </div>
+</div>
+
+
+{% else %}
+<h2>This is where you will see the game once you are logged in!</h2>
+<br>
+<h4>About Citizen Cypher:</h4>
+<p>This is a simple text-based simulation game similar to the Sims - except you can't see them!</p>
+<p>blah blah the game works like this and its like this and you can do this and that and whatnot</p>
+<br>
+<p>Click <a href="{{ url_for('login')}}">here</a> to log in.</p>
+
+{% endif %}
+
+
 {% endblock %}

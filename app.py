@@ -1,47 +1,78 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
-
+import sqlconnector 
 
 app = Flask(__name__)
-# app.config.from_object(Config) 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:u%MrTo0&4sV4@localhost/citizencypher'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'hellmadsecret'
 
 app.app_context().push()
 
 db = SQLAlchemy(app)
-
-class Users(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(10), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-
-    def __repr__(self):
-        return '<Name %r' % self.name
-
-
-
-loggedIn = True
+sqlconnector.initialise_db(db)
 
 @app.route('/')
+@app.route('/index')
 def home():
-    if loggedIn == False:
-        return redirect(url_for('login'))
     return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    msg = ''
+    my_cursor = sqlconnector.create_cursor()
+    if request.method == 'POST':
+        print("successful post")
+        email = request.form['email']
+        password = request.form['password']
 
-@app.route('/signup')
+        query = "SELECT * FROM user WHERE email = \"" + email + "\" AND password = \"" + password + "\""
+        
+        my_cursor.execute(query)
+        account = my_cursor.fetchone()
+        
+        if account:
+            session['loggedIn'] = True
+            session['realname'] = account[1]
+            return redirect(url_for('home'))
+        else:
+            msg = "Please check credentials!"
+        
+    return render_template('login.html', msg=msg)
+
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return render_template('signup.html')
+    msg = ''
+    my_cursor = sqlconnector.create_cursor()
+    if request.method == "POST":
+        realname = request.form['realname']
+        email = request.form['email']
+        password = request.form['password']
+        
+        query = "SELECT * FROM user WHERE email = \"" + email + "\""
+        
+        my_cursor.execute(query)
+        account = my_cursor.fetchone()
+        
+        if account:
+            msg = 'This email already exists in the database!'
+        else:
+            ins_query = "INSERT INTO user(realname, email, password) VALUES (\'" + realname + "\', \'" + email + "\', \'" + password + "\')"
+            
+            my_cursor.execute(ins_query)
+            my_cursor.execute("SELECT * FROM user")
+            for ud in my_cursor:
+                print(ud)
+            
+            msg = "Account successfully registered!"
+    return render_template('signup.html', msg=msg)
 
 @app.route('/logout')
 def logout():
-    return render_template('login.html')
+    session.pop('loggedIn', None)
+    session.pop('realname', None)
+    return redirect(url_for('login'))
 
 @app.route('/game')
 def game():

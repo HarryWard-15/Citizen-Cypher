@@ -1,4 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>This is the index page</h1> 
+<h1>Welcome to Citizen Cypher!</h1>
+
+
+{% if session['loggedIn'] == True %}
+<h2>Thanks for logging in, {{ session['realname'] }}!</h2>
+<br>
+<div class="row justify-content-center">
+    <a href="{{ url_for('game')}}" id="play-game" type="button" class="btn btn-outline-light btn-lg">Play game</a>
+</div>
+<br>
+<p><a href="{{ url_for('logout')}}">Not you?</a></p>
+
+
+{% else %}
+<h2>You are not logged in.</h2>
+<br>
+<p><a href="{{ url_for('login')}}">Log in</a> to your account or <a href="{{ url_for('signup')}}">sign up</a> for an
+    account!</p>
+
+
+{% endif %}
 {% endblock %}

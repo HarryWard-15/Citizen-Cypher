@@ -1,1 +1,1 @@
-CREATE DATABASE citizencyphrt_db;
+CREATE DATABASE citizencypher;
