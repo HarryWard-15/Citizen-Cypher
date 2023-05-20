@@ -7,7 +7,7 @@
 <br> 
 
 {% for index in range(gameid|length) %}
-Game ID {{ index + 1 }}: <br>
+<h3>Game ID {{ index + 1 }}: </h3><br>
 Days survived: {{ dayssurvived[index] }}<br>
 Death reason: {{ deathreason[index] }}<br><br>
 {% endfor %}

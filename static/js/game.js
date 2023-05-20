@@ -125,7 +125,30 @@ function updateStats(arr) {
 };
 
 function endGame() {
+    buttons.forEach(button => {
+        button.classList.add('disabled');
+    });
+
+    let stats_json = JSON.stringify( {Sleep: currentStats[0], 
+                                      Happiness: currentStats[1], 
+                                      Fitness: currentStats[2], 
+                                      Saturation: currentStats[3]} )
     console.log("Game has ended");
+    console.log(stats_json);
+    
+    let stats_obj = JSON.parse(stats_json);
+
+    let death_stat;
+
+    for (var key in stats_obj) {
+        if (stats_obj.hasOwnProperty(key) && stats_obj[key] <= 0) {
+            death_stat = key;
+        }
+    }
+
+    let death_string = "Reason for death: " + death_stat;
+
+    console.log(death_string);
 }
 
 let clickEvent = (e) => {
