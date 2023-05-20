@@ -4,7 +4,39 @@
 
 {% if session['loggedIn'] == True %}
 <h1>Game history for {{ session['realname'] }}</h1>
+<br> 
+
+<div class="row justify-content-center">
+    {% for game in games %}
+    <p>GAME DATA: {{ game }}</p>
+    <br>
+    {% endfor %}
+    
+</div>
 <br>
+
+<div class="row justify-content-center">
+    {% for gi in gameid %}
+    <p>GAMEID: {{ gi }}<br></p>
+    {% endfor %}
+</div>
+
+<br>
+
+<div class="row justify-content-center">
+    {% for dr in deathreason %}
+    <p>DEATH REASON: {{ dr }}<br></p>
+    {% endfor %}
+</div>
+
+<br>
+
+<div class="row justify-content-center">
+    {% for ds in dayssurvived %}
+    <p>DAYS SURVIVED: {{ ds }}<br></p>
+    {% endfor %}
+</div>
+
 <div class="row justify-content-center">
     <a href="{{ url_for('game')}}"  ><button class="button general-button">START NEW GAME</button></a>
 </div>

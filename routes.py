@@ -25,6 +25,7 @@ def login():
         
         if account:
             session['loggedIn'] = True
+            session['userid'] = account[0]
             session['realname'] = account[1]
             return redirect(url_for('home'))
         else:
@@ -71,4 +72,20 @@ def game():
 
 @app.route('/history')
 def history():
-    return render_template('history.html')
+    cursor = sqlconnector.create_cursor()
+
+    userid = session['userid']
+
+    games = []
+    gameid, deathreason, dayssurvived = [], [], []
+
+    query = "SELECT * FROM previous_game WHERE userid = " + str(userid)
+    cursor.execute(query)
+    game_obj = cursor.fetchall()
+    for obj in game_obj:
+        games.append(obj)
+        gameid.append(obj[0])
+        deathreason.append(obj[2])
+        dayssurvived.append(obj[3])
+
+    return render_template('history.html', games=games, gameid=gameid, deathreason=deathreason, dayssurvived=dayssurvived)
