@@ -98,6 +98,8 @@ let currentStats = [25,25,25,25];
 
 let answersArrChange = [];
 
+let clickCount = 0;
+
 function updateQuestion() {
     const sleepChanger = options.sleep[Math.floor(Math.random() *20)];
     const happinessChanger = options.happiness[Math.floor(Math.random() *20)];
@@ -146,17 +148,19 @@ function endGame() {
         }
     }
 
-    let death_string = "Reason for death: " + death_stat;
+    let dbdata_json = JSON.stringify({"Reason for death": death_stat, "Days survived": clickCount});
 
-    console.log(death_string);
+    return dbdata_json;
 }
 
 let clickEvent = (e) => {
+    clickCount += 1;
     const answerId = e.target.id;
     console.log(answersArrChange[answerId]);
     currentStats[answerId]+= answersArrChange[answerId];
     console.log(currentStats);
     updateQuestion();
+    console.log("click count", clickCount);
 };
 
 buttons.forEach(button => {
