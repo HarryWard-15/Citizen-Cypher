@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request, flash, session
+from flask import render_template, redirect, url_for, request, session, jsonify
 from datetime import datetime
 from app import app
 from app import db
