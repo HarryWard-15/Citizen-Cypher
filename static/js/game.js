@@ -101,6 +101,8 @@ let answersArrChange = [];
 
 let clickCount = 0;
 
+var buttonClicked;
+
 function updateQuestion() {
     const sleepChanger = options.sleep[Math.floor(Math.random() *20)];
     const happinessChanger = options.happiness[Math.floor(Math.random() *20)];
@@ -129,8 +131,13 @@ function updateStats(arr) {
 
 function updateInfo() {
     let day_counter = gameInfo.childNodes[1];
+    let last_action = gameInfo.childNodes[4];
+    
+
     console.log(day_counter.innerHTML);
+    console.log(last_action.innerHTML);
     day_counter.childNodes[1].innerHTML = clickCount;
+    last_action.innerHTML = buttonClicked;
 }
 
 function endGame() {
@@ -182,6 +189,8 @@ let clickEvent = (e) => {
     updateQuestion();
     console.log("click count", clickCount);
     updateInfo();
+    buttonClicked = e.target.innerText;
+    console.log(buttonClicked);
 };
 
 buttons.forEach(button => {
