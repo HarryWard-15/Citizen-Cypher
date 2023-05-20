@@ -54,21 +54,21 @@ def initialise_db(db_obj):
 
     db_obj.create_all()
 
-    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('a a', 'a@a.a', 'a')")
-    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('b b', 'b@b.b', 'b')")
+    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('Sample user A', 'a@a.a', 'a')")
+    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('Sample user B', 'b@b.b', 'b')")
     my_cursor.execute("SELECT * FROM user")
     for ud in my_cursor:
         print(ud)
 
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'bein 2 sad', 27)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'aint get no sleep', 16)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'no gym', 4)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'hungry as hell', 62)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Happiness', 27)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Sleep', 16)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Fitness', 4)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Saturation', 62)")
     
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'bein 2 sad p2', 27)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'aint get no sleep p2', 16)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'no gym p2', 4)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'hungry as hell p2', 62)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Happiness', 27)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Sleep', 16)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Fitness', 4)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Saturation', 62)")
 
 
     my_cursor.execute("SELECT * FROM previous_game")

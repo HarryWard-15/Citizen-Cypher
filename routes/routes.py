@@ -69,7 +69,7 @@ def signup():
 def logout():
     session.pop('loggedIn', None)
     session.pop('realname', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
 @app.route('/game', methods=['GET','POST'])
 def game():
