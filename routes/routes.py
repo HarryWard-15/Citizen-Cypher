@@ -3,6 +3,7 @@ from datetime import datetime
 from app import app
 from app import db
 import connection.sqlconnector as sqlconnector
+import requests, json
 
 @app.route('/')
 @app.route('/index')
@@ -70,8 +71,33 @@ def logout():
     session.pop('realname', None)
     return redirect(url_for('login'))
 
-@app.route('/game')
+@app.route('/game', methods=['GET','POST'])
 def game():
+    if request.method == "POST":
+        print("successful game data post")
+        r = request.get_json()
+        print(r)
+        print(type(r))
+
+        # json_dict = json.loads(r)
+
+        death_string = "Died because of low " + r["death_stat"]
+
+        days_survived = "Survived " + str(r["days_count"]) + " days"
+
+        print(death_string)
+        print(days_survived)
+
+        cursor = sqlconnector.create_cursor()
+        ins_query = "INSERT INTO previous_game(userid, causeOfDeath, daysSurvived) VALUES (" + str(session['userid']) + ', "' + death_string + '", ' + str(r["days_count"]) + ")"
+        print(ins_query)
+
+        cursor.execute(ins_query)
+        cursor.execute("SELECT * FROM previous_game")
+        for pg in cursor:
+            print(pg)
+
+
     return render_template('game.html')
 
 @app.route('/history')

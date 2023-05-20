@@ -148,9 +148,22 @@ function endGame() {
         }
     }
 
-    let dbdata_json = JSON.stringify({"Reason for death": death_stat, "Days survived": clickCount});
+    let dbdata_json = JSON.stringify({"death_stat": death_stat, "days_count": clickCount});
+    console.log(dbdata_json);
 
-    return dbdata_json;
+    sendGameData(dbdata_json);
+}
+
+function sendGameData(json) {
+    var xhr = new XMLHttpRequest();
+    var url = "/game";
+
+    xhr.open("POST", url, true);
+    
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    console.log(json);
+    xhr.send(json);
 }
 
 let clickEvent = (e) => {
