@@ -7,7 +7,7 @@
 
 <div class="row justify-content-center">
     <div class="game-container">
-        <div class="justify-content-center">
+        <div class="row justify-content-center">
             <div class="game-box" id="gameBox">
                 <h5>Sleep: <span id='sleepStat'>blah</span></h5>
                 <h5>Happiness: <span id='happinessStat'></span></h5>
@@ -15,6 +15,12 @@
                 <h5>Saturation: <span id='saturationStat'></span></h5>
             </div>
             <br/>
+            <div class="game-box"></div>
+        </div>
+
+        <br>
+
+        <div class="justify-content-center">
             <h3 id="question">What super fun activity will you do?</h3>
             <br>
             <div class="game-buttons" id="answers">
@@ -26,9 +32,9 @@
                 <br><br>
                 <a id="3" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
             </div>
-            <br>
-            
         </div>
+        <br>
+        
         <br><br>
         <div class="page-buttons row justify-content-center">
             <a href="{{ url_for('home')}}" id="button-home" type="button" class="btn btn-outline-danger btn-lg">Home</a>
