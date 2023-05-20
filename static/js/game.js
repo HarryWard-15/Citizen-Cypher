@@ -2,6 +2,7 @@ const questionBox = document.getElementById('question');
 const answers = document.getElementById('answers');
 const buttons = document.querySelectorAll('.answerButton');
 const gameBox = document.getElementById('gameBox');
+const gameInfo = document.getElementById('gameInfo');
 
 const options = {
     "sleep": [  
@@ -126,6 +127,12 @@ function updateStats(arr) {
     }
 };
 
+function updateInfo() {
+    let day_counter = gameInfo.childNodes[1];
+    console.log(day_counter.innerHTML);
+    day_counter.childNodes[1].innerHTML = clickCount;
+}
+
 function endGame() {
     buttons.forEach(button => {
         button.classList.add('disabled');
@@ -174,11 +181,14 @@ let clickEvent = (e) => {
     console.log(currentStats);
     updateQuestion();
     console.log("click count", clickCount);
+    updateInfo();
 };
 
 buttons.forEach(button => {
     button.addEventListener('click', clickEvent);
 });
+
+
 
 updateStats(currentStats);
 updateQuestion();
