@@ -56,7 +56,7 @@ python3 -m pip install -r requirements.txt
 python3 -m venv venv
 ```
 ```
-source .\venv\Scripts\activate
+source venv/bin/activate
 ```
 ```
 flask run
@@ -68,6 +68,7 @@ There is a large range of technologies used for this application.
 
 - Flask/Python - used to create the backend server
 - MySQL - SQLAlchemy - used to create the database and schema.
+- HTML/CSS/JavaScript - frontend technologies, with some implementation via Bootstrap 4.6.2 
 
 ## Wire Frame
 
@@ -96,7 +97,7 @@ If you have any further questions, please contact via email or github.
 
 |      Harry:      |      Nathan:      | 
 | :---:        |    :----:   |
-| <a href="mailto:hward.1508@gmail.com"><img alt="Link to email contact address" src="https://img.shields.io/badge/email-D14836?style=for-the-badge" target="_blank" /></a><a href="https://github.com/HarryWard-15"><img alt="badge for GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" target="_blank" /></a>      | Title       | 
+| <a href="mailto:hward.1508@gmail.com"><img alt="Link to email contact address" src="https://img.shields.io/badge/email-D14836?style=for-the-badge" target="_blank" /></a><a href="https://github.com/HarryWard-15"><img alt="badge for GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" target="_blank" /></a>      | <a href="mailto:nathanphxm@gmail.com"><img alt="Link to email contact address" src="https://img.shields.io/badge/email-D14836?style=for-the-badge" target="_blank" /></a><a href="https://github.com/nathanphxm"><img alt="badge for GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" target="_blank" /></a>       | 
 
 
 
