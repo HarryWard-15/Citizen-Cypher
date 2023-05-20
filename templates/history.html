@@ -7,7 +7,9 @@
 <br> 
 
 {% for index in range(gameid|length) %}
-Game ID {{ index }}: Days survived: {{ dayssurvived[index] }}, reason: {{ deathreason[index] }}<br>
+Game ID {{ index + 1 }}: <br>
+Days survived: {{ dayssurvived[index] }}<br>
+Death reason: {{ deathreason[index] }}<br><br>
 {% endfor %}
 
 <div class="row justify-content-center">
