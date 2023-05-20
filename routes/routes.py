@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, request, session, jsonify
 from datetime import datetime
 from app import app
 from app import db
-import sqlconnector 
+import connection.sqlconnector as sqlconnector
 
 @app.route('/')
 @app.route('/index')
@@ -58,6 +58,10 @@ def signup():
                 print(ud)
             
             msg = "Account successfully registered!"
+            session['loggedIn'] = True
+            session['realname'] = realname
+            return redirect(url_for('home'))
+
     return render_template('signup.html', msg=msg)
 
 @app.route('/logout')
