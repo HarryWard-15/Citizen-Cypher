@@ -60,15 +60,15 @@ def initialise_db(db_obj):
     ]
 
     sample_games = [
-        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 27),
-        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 16),
-        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 4),
-        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 50),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low Happiness', daysSurvived = 27),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low Saturation', daysSurvived = 16),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low Fitness', daysSurvived = 4),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low Sleep', daysSurvived = 50),
 
-        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 25),
-        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 20),
-        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 8),
-        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 34)
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low Happiness', daysSurvived = 25),
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low Saturation', daysSurvived = 20),
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low Fitness', daysSurvived = 8),
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low Sleep', daysSurvived = 34)
 
     ]
 
