@@ -54,27 +54,28 @@ def initialise_db(db_obj):
 
     db_obj.create_all()
 
-    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('Sample user A', 'a@a.a', 'a')")
-    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('Sample user B', 'b@b.b', 'b')")
-    my_cursor.execute("SELECT * FROM user")
-    for ud in my_cursor:
-        print(ud)
+    sample_users = [
+        User(realname='Sample user A', email='a@a.a', password='a'),
+        User(realname='Sample user B', email='b@b.b', password='b')
+    ]
 
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Happiness', 27)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Sleep', 16)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Fitness', 4)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Saturation', 62)")
-    
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Happiness', 27)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Sleep', 16)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Fitness', 4)")
-    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Saturation', 62)")
+    sample_games = [
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 27),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 16),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 4),
+        PreviousGame(userId=1, causeOfDeath = 'Died because of low ', daysSurvived = 50),
 
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 25),
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 20),
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 8),
+        PreviousGame(userId=2, causeOfDeath = 'Died because of low ', daysSurvived = 34)
 
-    my_cursor.execute("SELECT * FROM previous_game")
-    for pg in my_cursor:
-        print(pg)
-    
+    ]
+
+    db_obj.session.add_all(sample_users)
+    db_obj.session.add_all(sample_games)
+    db_obj.session.commit()
+
     my_cursor.close()
 
 def create_cursor():
