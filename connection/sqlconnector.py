@@ -8,7 +8,7 @@ from config import Connection
 cnx = mysql.connector.connect(
     host="us-cdbr-east-06.cleardb.net",
     user= "be09806f63f8e8",
-    password= Connection.password,
+    password= "f184440b",
     db= "heroku_0046abaa65d13c4",
     auth_plugin= "mysql_native_password",
 )
