@@ -1,2 +1,2 @@
 <process type>: web
-web: flask db upgrade; flask translate compile; gunicorn citizen-cypher:app
+web: gunicorn citizen-cypher:app
