@@ -5,7 +5,7 @@
 
 <!-- Iterate through previousgame table returned from route and display day count and death reason -->
 {% for index in range(gameid|length) %}
-<h3>Game ID {{ index + 1 }}:</h3>
+<h3>Game ID {{ games[index] }}:</h3>
 <p id="days_survived">Days survived: {{ dayssurvived[index] }}</p>
 <p id="death_reason">Death reason: {{ deathreason[index] }}</p>
 <br />

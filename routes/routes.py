@@ -27,7 +27,6 @@ def home():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     msg = ""
-    my_cursor = sqlconnector.create_cursor()
     if request.method == "POST":
         user = User.query.filter_by(email=request.form["email"]).first()
         if user is None or not user.check_password(request.form["password"]):
@@ -73,6 +72,7 @@ def signup():
             db.session.commit()
 
             msg = "Account successfully registered!"
+            session['userid'] = user.id
             session["loggedIn"] = True
             session["realname"] = realname
             return redirect(url_for("home"))
@@ -85,6 +85,7 @@ def signup():
 #############################################################
 @app.route("/logout")
 def logout():
+    session.pop("userid", None)
     session.pop("loggedIn", None)
     session.pop("realname", None)
     return redirect(url_for("home"))
@@ -120,21 +121,19 @@ def game():
 ###################################################################
 @app.route("/history")
 def history():
-    cursor = sqlconnector.create_cursor()
 
     userid = session["userid"]
 
     games = []
     gameid, deathreason, dayssurvived = [], [], []
 
-    query = "SELECT * FROM previous_game WHERE userid = " + str(userid)
-    cursor.execute(query)
-    game_obj = cursor.fetchall()
-    for obj in game_obj:
-        games.append(obj)
-        gameid.append(obj[0])
-        deathreason.append(obj[2])
-        dayssurvived.append(obj[3])
+    gameList = PreviousGame.query.filter_by(userId=userid).all()
+
+    for obj in gameList:
+        games.append(obj.id)
+        gameid.append(obj.userId)
+        deathreason.append(obj.causeOfDeath)
+        dayssurvived.append(obj.daysSurvived)
 
     return render_template(
         "history.html",
