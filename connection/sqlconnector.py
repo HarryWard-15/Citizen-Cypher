@@ -2,14 +2,15 @@ import mysql.connector
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
+from config import Connection
 
 # Define SQL connector object for connecting to SQL database.
 cnx = mysql.connector.connect(
     host="us-cdbr-east-06.cleardb.net",
-    user="be09806f63f8e8",
-    password="f184440b",
-    db="heroku_0046abaa65d13c4",
-    auth_plugin="mysql_native_password",
+    user= "be09806f63f8e8",
+    password= Connection.password,
+    db= "heroku_0046abaa65d13c4",
+    auth_plugin= "mysql_native_password",
 )
 
 
