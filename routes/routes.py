@@ -4,6 +4,7 @@ from app import app
 from app import db
 import connection.sqlconnector as sqlconnector
 import requests, json
+from models.models import User
 
 ##################
 ### DECORATORS ###
@@ -77,15 +78,10 @@ def signup():
         if account:
             msg = "This email already exists in the database!"
         else:
-            ins_query = (
-                "INSERT INTO user(realname, email, password) VALUES ('"
-                + realname
-                + "', '"
-                + email
-                + "', '"
-                + password
-                + "')"
-            )
+            password = User.set_password(password, password)
+            user = User(realname=realname, email=email, password=password)
+            db.session.add(user)
+            db.session.commit()
 
             msg = "Account successfully registered!"
             session["loggedIn"] = True
