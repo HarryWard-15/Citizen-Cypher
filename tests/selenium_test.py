@@ -143,8 +143,5 @@ class MyTestCase(unittest.TestCase):
 
         print("Successful game history found!")
 
-
-
-
 if __name__ == '__main__':
     unittest.main()
