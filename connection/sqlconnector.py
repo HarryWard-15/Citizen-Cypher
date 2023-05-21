@@ -5,9 +5,9 @@ from sqlalchemy.orm import relationship
 
 # Define SQL connector object for connecting to SQL database.
 cnx = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="u%MrTo0&4sV4",
+    host="us-cdbr-east-06.cleardb.net",
+    user="be09806f63f8e8",
+    password="f184440b",
     auth_plugin="mysql_native_password",
 )
 
