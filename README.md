@@ -1,6 +1,6 @@
 ## CitizenCypher
 
-[![Prototype image of the citizen cypher site on computer and mobile phone. The background is the company purple. ](client/src/assets/readme_img/prototype.png)](https://outnabout.herokuapp.com/)
+![Prototype image of the citizen cypher site on computer and mobile phone. The background is the company purple. ](static/img/hero.png)
 
 ---
 
@@ -8,25 +8,25 @@ Are you bored out of your brains? Play Citizen Cypher today!
 
 ---
 
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)	![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white) ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) ![Jquery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
 [![MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ---
 
-[About](#about) ✦ [Deployment](#deployment) ✦ [Technologies Used](#technologies-used) ✦ [Wire Frame](#wire-frame) ✦  [Resources](#resources) ✦ [License](#license) ✦ [Contact](#contact)
+✦ [Deployment](#deployment) ✦ [Technologies Used](#technologies-used) ✦ [Images](#current-product) ✦  [Resources](#resources) ✦ [License](#license) ✦ [Contact](#contact)
 
 ---
 
-## About
+
 
 
 
 ## Deployment
 
+https://citizen-cypher.herokuapp.com/
 
 
-(link here)
 
 ## Installation 
 
@@ -70,15 +70,15 @@ There is a large range of technologies used for this application.
 - MySQL - SQLAlchemy - used to create the database and schema.
 - HTML/CSS/JavaScript - frontend technologies, with some implementation via Bootstrap 4.6.2 
 
-## Wire Frame
+## Current Product
 
-The images below show our inititial wireframes and database queries for our application.
+The images below show our deployed application.
 
-![Wire frame of the login and sign up pages]()
+![Wire frame of the login and sign up pages](static/img/loggedin.png)
 
-![Wire frame of the dashboard page]()
+![Wire frame of the dashboard page](static/img/mainss.png)
 
-![Wire frame of the profile and qr code pages]()
+
 
 ## License
 
