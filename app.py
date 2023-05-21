@@ -4,11 +4,11 @@ from flask import Flask, redirect, url_for, render_template, request, flash, ses
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import connection.sqlconnector as sqlconnector
+from config import Config
+
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://be09806f63f8e8:f184440b@us-cdbr-east-06.cleardb.net/heroku_0046abaa65d13c4'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'hellmadsecret'
+app.config.from_object(Config)
 
 app.app_context().push()
 
