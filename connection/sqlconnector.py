@@ -42,7 +42,6 @@ def initialise_db(db_obj):
             return '<PreviousGames %r>' % self.daysSurvived
 
     class currentGame(db_obj.Model):
-
         __tablename__ = 'current_game'
 
         id = db_obj.Column(db_obj.Integer, primary_key=True)
@@ -53,13 +52,28 @@ def initialise_db(db_obj):
         sleep = db_obj.Column(db_obj.Integer, nullable=False)
 
 
-        
     db_obj.create_all()
 
-    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('a a', 'a@a.a', 'a')")
+    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('Sample user A', 'a@a.a', 'a')")
+    my_cursor.execute("INSERT INTO user(realname, email, password) VALUES ('Sample user B', 'b@b.b', 'b')")
     my_cursor.execute("SELECT * FROM user")
     for ud in my_cursor:
         print(ud)
+
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Happiness', 27)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Sleep', 16)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Fitness', 4)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (1, 'Died because of low Saturation', 62)")
+    
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Happiness', 27)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Sleep', 16)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Fitness', 4)")
+    my_cursor.execute("INSERT INTO previous_game(userId, causeOfDeath, daysSurvived) VALUES (2, 'Died because of low Saturation', 62)")
+
+
+    my_cursor.execute("SELECT * FROM previous_game")
+    for pg in my_cursor:
+        print(pg)
     
     my_cursor.close()
 

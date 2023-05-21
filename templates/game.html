@@ -1,47 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Game page</h1>
+<h1>Citizen Cypher game page</h1>
 {% if session['loggedIn'] == True %}
-<h2>Test content for user {{ session['realname'] }}</h2>
+<h2>Make wise decisions, {{ session['realname'] }}</h2>
 <br>
 
-<div class="game-container">
-    <div class="row justify-content-center">
-        <div class="game-box" id="gameBox">
-            <h5>Sleep: <span id='sleepStat'>blah</span></h5>
-            <h5>Happiness: <span id='happinessStat'></span></h5>
-            <h5>Fitness: <span id='fitnessStat'></span></h5>
-            <h5>Saturation: <span id='saturationStat'></span></h5>
+<div class="row justify-content-center">
+    <div class="game-container">
+        <div class="row justify-content-center">
+            <div class="game-box" id="gameBox">
+                <h5>Sleep: <span id='sleepStat'></span></h5>
+                <h5>Happiness: <span id='happinessStat'></span></h5>
+                <h5>Fitness: <span id='fitnessStat'></span></h5>
+                <h5>Saturation: <span id='saturationStat'></span></h5>
+            </div>
+            <br/>
+            <div class="game-box" id="gameInfo">
+                <h5>Day number: <span id="dayCount">0</span></h5>
+                <h5>Last action:</h5>
+                <h6 id="lastAction">Pick an option!</h6>
+            </div>
         </div>
-        <br/>
-        <h3 id="question">Choose Your Next Super Fun Activity</h3>
-        <br/>
-        <div class="game-buttons" id="answers">
-            <a id="0" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
-            <a id="1" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+
+        <br>
+
+        <div class="justify-content-center">
+            <h3 id="question">What super fun activity will you do?</h3>
             <br>
-            <a id="2" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
-            <a id="3" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+            <div class="game-buttons" id="answers">
+                <a id="0" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+                <br><br>
+                <a id="1" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+                <br><br>
+                <a id="2" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+                <br><br>
+                <a id="3" type="button" class="answerButton btn btn-outline-light btn-lg"></a>
+            </div>
         </div>
         <br>
         
-    </div>
-    <br><br>
-    <div class="page-buttons row justify-content-center">
-        <a href="{{ url_for('home')}}" id="button-home" type="button" class="btn btn-outline-danger btn-lg">Home</a>
+        <br><br>
+        <div class="page-buttons row justify-content-center">
+            <a href="{{ url_for('home')}}" id="button-home" type="button" class="btn btn-outline-danger btn-lg">Home</a>
+        </div>
     </div>
 </div>
-
-
-{% else %}
-<h2>This is where you will see the game once you are logged in!</h2>
-<br>
-<h4>About Citizen Cypher:</h4>
-<p>This is a simple text-based simulation game similar to the Sims - except you can't see them!</p>
-<p>blah blah the game works like this and its like this and you can do this and that and whatnot</p>
-<br>
-<p>Click <a href="{{ url_for('login')}}">here</a> to log in.</p>
-
 {% endif %}
 
 <script src="static/js/game.js"></script>

@@ -4,7 +4,14 @@
 
 {% if session['loggedIn'] == True %}
 <h1>Game history for {{ session['realname'] }}</h1>
-<br>
+<br> 
+
+{% for index in range(gameid|length) %}
+<h3>Game ID {{ index + 1 }}: </h3><br>
+Days survived: {{ dayssurvived[index] }}<br>
+Death reason: {{ deathreason[index] }}<br><br>
+{% endfor %}
+
 <div class="row justify-content-center">
     <a href="{{ url_for('game')}}"  ><button class="button general-button">START NEW GAME</button></a>
 </div>

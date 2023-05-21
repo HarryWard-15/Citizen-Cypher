@@ -2,6 +2,7 @@ const questionBox = document.getElementById('question');
 const answers = document.getElementById('answers');
 const buttons = document.querySelectorAll('.answerButton');
 const gameBox = document.getElementById('gameBox');
+const gameInfo = document.getElementById('gameInfo');
 
 const options = {
     "sleep": [  
@@ -98,6 +99,10 @@ let currentStats = [25,25,25,25];
 
 let answersArrChange = [];
 
+let clickCount = 0;
+
+var buttonClicked;
+
 function updateQuestion() {
     const sleepChanger = options.sleep[Math.floor(Math.random() *20)];
     const happinessChanger = options.happiness[Math.floor(Math.random() *20)];
@@ -124,21 +129,75 @@ function updateStats(arr) {
     }
 };
 
+function updateInfo() {
+    let day_counter = gameInfo.childNodes[1];
+    let last_action = gameInfo.childNodes[4];
+    
+
+    console.log(day_counter.innerHTML);
+    console.log(last_action.innerHTML);
+    day_counter.childNodes[1].innerHTML = clickCount;
+    last_action.innerHTML = buttonClicked;
+}
+
 function endGame() {
+    buttons.forEach(button => {
+        button.classList.add('disabled');
+    });
+
+    let stats_json = JSON.stringify( {Sleep: currentStats[0], 
+                                      Happiness: currentStats[1], 
+                                      Fitness: currentStats[2], 
+                                      Saturation: currentStats[3]} )
     console.log("Game has ended");
+    console.log(stats_json);
+    
+    let stats_obj = JSON.parse(stats_json);
+
+    let death_stat;
+
+    for (var key in stats_obj) {
+        if (stats_obj.hasOwnProperty(key) && stats_obj[key] <= 0) {
+            death_stat = key;
+        }
+    }
+
+    let dbdata_json = JSON.stringify({"death_stat": death_stat, "days_count": clickCount});
+    console.log(dbdata_json);
+
+    sendGameData(dbdata_json);
+}
+
+function sendGameData(json) {
+    var xhr = new XMLHttpRequest();
+    var url = "/game";
+
+    xhr.open("POST", url, true);
+    
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    console.log(json);
+    xhr.send(json);
 }
 
 let clickEvent = (e) => {
+    clickCount += 1;
     const answerId = e.target.id;
     console.log(answersArrChange[answerId]);
     currentStats[answerId]+= answersArrChange[answerId];
     console.log(currentStats);
     updateQuestion();
+    console.log("click count", clickCount);
+    updateInfo();
+    buttonClicked = e.target.innerText;
+    console.log(buttonClicked);
 };
 
 buttons.forEach(button => {
     button.addEventListener('click', clickEvent);
 });
+
+
 
 updateStats(currentStats);
 updateQuestion();

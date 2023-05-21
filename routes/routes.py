@@ -1,8 +1,9 @@
-from flask import render_template, flash, redirect, url_for, request, flash, session
+from flask import render_template, redirect, url_for, request, session, jsonify
 from datetime import datetime
 from app import app
 from app import db
 import connection.sqlconnector as sqlconnector
+import requests, json
 
 @app.route('/')
 @app.route('/index')
@@ -25,6 +26,7 @@ def login():
         
         if account:
             session['loggedIn'] = True
+            session['userid'] = account[0]
             session['realname'] = account[1]
             return redirect(url_for('home'))
         else:
@@ -67,12 +69,53 @@ def signup():
 def logout():
     session.pop('loggedIn', None)
     session.pop('realname', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
-@app.route('/game')
+@app.route('/game', methods=['GET','POST'])
 def game():
+    if request.method == "POST":
+        print("successful game data post")
+        r = request.get_json()
+        print(r)
+        print(type(r))
+
+        # json_dict = json.loads(r)
+
+        death_string = "Died because of low " + r["death_stat"]
+
+        days_survived = "Survived " + str(r["days_count"]) + " days"
+
+        print(death_string)
+        print(days_survived)
+
+        cursor = sqlconnector.create_cursor()
+        ins_query = "INSERT INTO previous_game(userid, causeOfDeath, daysSurvived) VALUES (" + str(session['userid']) + ', "' + death_string + '", ' + str(r["days_count"]) + ")"
+        print(ins_query)
+
+        cursor.execute(ins_query)
+        cursor.execute("SELECT * FROM previous_game")
+        for pg in cursor:
+            print(pg)
+
+
     return render_template('game.html')
 
 @app.route('/history')
 def history():
-    return render_template('history.html')
+    cursor = sqlconnector.create_cursor()
+
+    userid = session['userid']
+
+    games = []
+    gameid, deathreason, dayssurvived = [], [], []
+
+    query = "SELECT * FROM previous_game WHERE userid = " + str(userid)
+    cursor.execute(query)
+    game_obj = cursor.fetchall()
+    for obj in game_obj:
+        games.append(obj)
+        gameid.append(obj[0])
+        deathreason.append(obj[2])
+        dayssurvived.append(obj[3])
+
+    return render_template('history.html', games=games, gameid=gameid, deathreason=deathreason, dayssurvived=dayssurvived)
