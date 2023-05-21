@@ -1,3 +1,5 @@
+# Initialising and importing required groundwork for Flask application to run.
+
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -16,4 +18,4 @@ sqlconnector.initialise_db(db)
 import routes.routes as routes
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
