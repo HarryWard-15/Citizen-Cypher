@@ -1,110 +1,145 @@
-from flask import render_template, redirect, url_for, request, session, jsonify
+from flask import render_template, redirect, url_for, request, session
 from datetime import datetime
 from app import app
 from app import db
 import connection.sqlconnector as sqlconnector
 import requests, json
 
-@app.route('/')
-@app.route('/index')
+##################
+### DECORATORS ###
+##################
+
+
+@app.route("/")
+@app.route("/index")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
-@app.route('/login', methods=['GET', 'POST'])
+
+#########################################################
+# Login method: create SQL cursor, check if POST request
+# then search database for matching credentials entered.
+# fetch it into cursor, and if an account exists, assign
+# session variables and redirect to home.
+# Display a message on screen if credentials invalid.
+#########################################################
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    msg = ''
-    my_cursor = sqlconnector.create_cursor()
-    if request.method == 'POST':
-        print("successful post")
-        email = request.form['email']
-        password = request.form['password']
-
-        query = "SELECT * FROM user WHERE email = \"" + email + "\" AND password = \"" + password + "\""
-        
-        my_cursor.execute(query)
-        account = my_cursor.fetchone()
-        
-        if account:
-            session['loggedIn'] = True
-            session['userid'] = account[0]
-            session['realname'] = account[1]
-            return redirect(url_for('home'))
-        else:
-            msg = "Please check credentials!"
-        
-    return render_template('login.html', msg=msg)
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    msg = ''
+    msg = ""
     my_cursor = sqlconnector.create_cursor()
     if request.method == "POST":
-        realname = request.form['realname']
-        email = request.form['email']
-        password = request.form['password']
-        
-        query = "SELECT * FROM user WHERE email = \"" + email + "\""
-        
+        email = request.form["email"]
+        password = request.form["password"]
+
+        query = (
+            'SELECT * FROM user WHERE email = "'
+            + email
+            + '" AND password = "'
+            + password
+            + '"'
+        )
+
         my_cursor.execute(query)
         account = my_cursor.fetchone()
-        
+
         if account:
-            msg = 'This email already exists in the database!'
+            session["loggedIn"] = True
+            session["userid"] = account[0]
+            session["realname"] = account[1]
+            return redirect(url_for("home"))
         else:
-            ins_query = "INSERT INTO user(realname, email, password) VALUES (\'" + realname + "\', \'" + email + "\', \'" + password + "\')"
-            
-            my_cursor.execute(ins_query)
-            my_cursor.execute("SELECT * FROM user")
-            for ud in my_cursor:
-                print(ud)
-            
+            msg = "Please check credentials!"
+
+    return render_template("login.html", msg=msg)
+
+
+#############################################################
+# Signup method: create SQL cursor, check if POST request
+# then search database for matching email entered.
+# If email exists in database, display message on screen.
+# If not, insert a new row into User table with credentials.
+# Assign session variables and redirect to home.
+#############################################################
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    msg = ""
+    my_cursor = sqlconnector.create_cursor()
+    if request.method == "POST":
+        realname = request.form["realname"]
+        email = request.form["email"]
+        password = request.form["password"]
+
+        query = 'SELECT * FROM user WHERE email = "' + email + '"'
+
+        my_cursor.execute(query)
+        account = my_cursor.fetchone()
+
+        if account:
+            msg = "This email already exists in the database!"
+        else:
+            ins_query = (
+                "INSERT INTO user(realname, email, password) VALUES ('"
+                + realname
+                + "', '"
+                + email
+                + "', '"
+                + password
+                + "')"
+            )
+
             msg = "Account successfully registered!"
-            session['loggedIn'] = True
-            session['realname'] = realname
-            return redirect(url_for('home'))
+            session["loggedIn"] = True
+            session["realname"] = realname
+            return redirect(url_for("home"))
 
-    return render_template('signup.html', msg=msg)
+    return render_template("signup.html", msg=msg)
 
-@app.route('/logout')
+
+#############################################################
+# Logout method: pop user session variables, redirect to home
+#############################################################
+@app.route("/logout")
 def logout():
-    session.pop('loggedIn', None)
-    session.pop('realname', None)
-    return redirect(url_for('home'))
+    session.pop("loggedIn", None)
+    session.pop("realname", None)
+    return redirect(url_for("home"))
 
-@app.route('/game', methods=['GET','POST'])
+###############################################################
+# Game method: game logic happens clientside; this route exists
+# to receive JSON game data from client and insert into database
+###############################################################
+@app.route("/game", methods=["GET", "POST"])
 def game():
     if request.method == "POST":
         print("successful game data post")
         r = request.get_json()
         print(r)
-        print(type(r))
-
-        # json_dict = json.loads(r)
 
         death_string = "Died because of low " + r["death_stat"]
 
-        days_survived = "Survived " + str(r["days_count"]) + " days"
-
-        print(death_string)
-        print(days_survived)
-
         cursor = sqlconnector.create_cursor()
-        ins_query = "INSERT INTO previous_game(userid, causeOfDeath, daysSurvived) VALUES (" + str(session['userid']) + ', "' + death_string + '", ' + str(r["days_count"]) + ")"
-        print(ins_query)
-
+        ins_query = (
+            "INSERT INTO previous_game(userid, causeOfDeath, daysSurvived) VALUES ("
+            + str(session["userid"])
+            + ', "'
+            + death_string
+            + '", '
+            + str(r["days_count"])
+            + ")"
+        )
         cursor.execute(ins_query)
-        cursor.execute("SELECT * FROM previous_game")
-        for pg in cursor:
-            print(pg)
+    return render_template("game.html")
 
 
-    return render_template('game.html')
-
-@app.route('/history')
+####################################################################
+# History method: create SQL cursor, retrieve entries from database
+# and pass them to html for Jinja to format on page.
+###################################################################
+@app.route("/history")
 def history():
     cursor = sqlconnector.create_cursor()
 
-    userid = session['userid']
+    userid = session["userid"]
 
     games = []
     gameid, deathreason, dayssurvived = [], [], []
@@ -118,4 +153,10 @@ def history():
         deathreason.append(obj[2])
         dayssurvived.append(obj[3])
 
-    return render_template('history.html', games=games, gameid=gameid, deathreason=deathreason, dayssurvived=dayssurvived)
+    return render_template(
+        "history.html",
+        games=games,
+        gameid=gameid,
+        deathreason=deathreason,
+        dayssurvived=dayssurvived,
+    )
