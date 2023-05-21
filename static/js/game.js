@@ -152,14 +152,30 @@ function updateStats(arr) {
 
 // Iterates day counter per click in game info box.
 // Attempts to add last clicked option to game info box.
-function updateInfo() {
+function updateInfo(e, diff) {
+  console.log(e.target);
   let day_counter = gameInfo.childNodes[1];
-  let last_action = gameInfo.childNodes[4];
 
-  console.log(day_counter.innerHTML);
-  console.log(last_action.innerHTML);
+  let last_action = gameInfo.childNodes[5];
+
   day_counter.childNodes[1].innerHTML = clickCount;
-  last_action.innerHTML = buttonClicked;
+  let action;
+  switch (e.target.id) {
+    case "0":
+      action =  "sleep";
+      break;
+    case "1":
+      action = "happiness";
+      break;
+    case "2":
+      action = "fitness";
+      break;
+    case "3":
+      action = "saturation";
+      break;
+  };
+  last_action.innerHTML = "You chose to " + e.target.innerHTML + " which gave you " + diff +" on your "+ action + " stat";
+  console.log(last_action.innerHTML);
 }
 
 // Game over function
@@ -216,14 +232,13 @@ function sendGameData(json) {
 let clickEvent = (e) => {
   clickCount += 1;
   const answerId = e.target.id;
-  console.log(answersArrChange[answerId]);
-  currentStats[answerId] += answersArrChange[answerId];
-  console.log(currentStats);
+  const diff = answersArrChange[answerId];
+  currentStats[answerId] += diff;
+  buttonClicked = e.target.innerText;
+  updateInfo(e, diff);
   updateQuestion();
   console.log("click count", clickCount);
-  updateInfo();
-  buttonClicked = e.target.innerText;
-  console.log(buttonClicked);
+
 };
 
 buttons.forEach((button) => {

@@ -4,7 +4,7 @@ from app import app
 from app import db
 import connection.sqlconnector as sqlconnector
 import requests, json
-from models.models import User
+from models.models import User, PreviousGame
 
 ##################
 ### DECORATORS ###
@@ -102,17 +102,15 @@ def game():
 
         death_string = "Died because of low " + r["death_stat"]
 
-        cursor = sqlconnector.create_cursor()
-        ins_query = (
-            "INSERT INTO previous_game(userid, causeOfDeath, daysSurvived) VALUES ("
-            + str(session["userid"])
-            + ', "'
-            + death_string
-            + '", '
-            + str(r["days_count"])
-            + ")"
-        )
-        cursor.execute(ins_query)
+        userId = session["userid"]
+        daysSurvived = r["days_count"]
+
+        prevGame = PreviousGame(userId=userId, causeOfDeath=death_string, daysSurvived=daysSurvived)
+        db.session.add(prevGame)
+        db.session.commit()
+
+        print(prevGame)
+
     return render_template("game.html")
 
 
