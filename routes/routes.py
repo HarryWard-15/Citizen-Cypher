@@ -29,27 +29,16 @@ def login():
     msg = ""
     my_cursor = sqlconnector.create_cursor()
     if request.method == "POST":
-        email = request.form["email"]
-        password = request.form["password"]
-
-        query = (
-            'SELECT * FROM user WHERE email = "'
-            + email
-            + '" AND password = "'
-            + password
-            + '"'
-        )
-
-        my_cursor.execute(query)
-        account = my_cursor.fetchone()
-
-        if account:
-            session["loggedIn"] = True
-            session["userid"] = account[0]
-            session["realname"] = account[1]
-            return redirect(url_for("home"))
-        else:
+        user = User.query.filter_by(email=request.form["email"]).first()
+        if user is None or not user.check_password(request.form["password"]):
             msg = "Please check credentials!"
+
+
+        session["loggedIn"] = True
+        session["userid"] = user.id
+        session["realname"] = user.realname
+        return redirect(url_for("home"))
+
 
     return render_template("login.html", msg=msg)
 
