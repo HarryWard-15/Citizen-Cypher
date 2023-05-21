@@ -6,7 +6,7 @@ from datetime import datetime
 import connection.sqlconnector as sqlconnector
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:u%MrTo0&4sV4@localhost/citizencypher'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://be09806f63f8e8:f184440b@us-cdbr-east-06.cleardb.net/heroku_0046abaa65d13c4?reconnect=true'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'hellmadsecret'
 
@@ -19,3 +19,4 @@ import routes.routes as routes
 
 if __name__ == '__main__':
     app.run(debug=False)
+
