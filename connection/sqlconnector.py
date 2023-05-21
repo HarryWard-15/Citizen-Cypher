@@ -8,6 +8,7 @@ cnx = mysql.connector.connect(
     host="us-cdbr-east-06.cleardb.net",
     user="be09806f63f8e8",
     password="f184440b",
+    db="heroku_0046abaa65d13c4",
     auth_plugin="mysql_native_password",
 )
 
@@ -97,6 +98,6 @@ cnx = mysql.connector.connect(
 
 
 # # Creating a cursor for use in other files.
-# def create_cursor():
-#     return_cursor = cnx.cursor()
-#     return return_cursor
+def create_cursor():
+    return_cursor = cnx.cursor()
+    return return_cursor
