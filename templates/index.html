@@ -1,29 +1,35 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <h1>Welcome to Citizen Cypher!</h1>
 
-
+<!-- If user is logged in, display new game and game history buttons -->
 {% if session['loggedIn'] == True %}
 <h2>Thanks for logging in, {{ session['realname'] }}!</h2>
-<br>
+<br />
 <div class="row justify-content-center">
-    <a href="{{ url_for('game')}}"  ><button class="button general-button">PLAY GAME</button></a>
-    <a href="{{ url_for('history')}}"  ><button class="button general-button">SHOW GAME HISTORY</button></a>
+  <a href="{{ url_for('game')}}"
+    ><button class="button general-button">PLAY GAME</button></a
+  >
+  <a href="{{ url_for('history')}}"
+    ><button class="button general-button">SHOW GAME HISTORY</button></a
+  >
 </div>
-<br>
-<p><a href="{{ url_for('logout')}}">Not you?</a></p>
+<br />
+<!-- Logout button -->
+<p><a href="{{ url_for('logout')}}">Not you, or want to log out?</a></p>
 
-
+<!-- Display tagline and show login/signup buttons to user if not logged in. -->
 {% else %}
 <h2>Do you have what it takes to survive?</h2>
-<br>
+<br />
 <h4>You are not currently logged in.</h4>
-<br>
+<br />
 <p>Create an account or log in to play!</p>
 
-<a href="{{ url_for('login')}}"><button class="button general-button">LOG IN</button></a>
-<a href="{{ url_for('signup')}}"><button class="button general-button">SIGN UP</button></a>
+<a href="{{ url_for('login')}}"
+  ><button class="button general-button">LOG IN</button></a
+>
+<a href="{{ url_for('signup')}}"
+  ><button class="button general-button">SIGN UP</button></a
+>
 
-
-{% endif %}
-{% endblock %}
+{% endif %} {% endblock %}

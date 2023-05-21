@@ -1,32 +1,37 @@
-{% extends "base.html" %}
-{% block content %}
-
-
-{% if session['loggedIn'] == True %}
+{% extends "base.html" %} {% block content %} {% if session['loggedIn'] == True
+%}
 <h1>Game history for {{ session['realname'] }}</h1>
-<br> 
+<br />
 
+<!-- Iterate through previousgame table returned from route and display day count and death reason -->
 {% for index in range(gameid|length) %}
-<h3>Game ID {{ index + 1 }}: </h3>
-<p id="days_survived" >Days survived: {{ dayssurvived[index] }}</p>
-<p id="death_reason" >Death reason: {{ deathreason[index] }}</p><br>
+<h3>Game ID {{ index + 1 }}:</h3>
+<p id="days_survived">Days survived: {{ dayssurvived[index] }}</p>
+<p id="death_reason">Death reason: {{ deathreason[index] }}</p>
+<br />
 {% endfor %}
 
+<!-- Display new game button under game history content -->
 <div class="row justify-content-center">
-    <a href="{{ url_for('game')}}"  ><button class="button general-button">START NEW GAME</button></a>
+  <a href="{{ url_for('game')}}"
+    ><button class="button general-button">START NEW GAME</button></a
+  >
 </div>
-<br>
+<br />
+<!-- Standard link to return home -->
 <p><a href="{{ url_for('home')}}">Go home</a></p>
 
-
+<!-- Display login/signup buttons if user somehow finds history page. -->
 {% else %}
 <h2>You are not logged in.</h2>
-<br>
+<br />
 <p>Create an account or log in to play!</p>
 
-<a href="{{ url_for('login')}}"><button class="button index-login">LOG IN</button></a>
-<a href="{{ url_for('signup')}}"><button class="button index-signup">SIGN UP</button></a>
+<a href="{{ url_for('login')}}"
+  ><button class="button index-login">LOG IN</button></a
+>
+<a href="{{ url_for('signup')}}"
+  ><button class="button index-signup">SIGN UP</button></a
+>
 
-
-{% endif %}
-{% endblock %}
+{% endif %} {% endblock %}
