@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = 'hellmadsecret'
 app.app_context().push()
 
 db = SQLAlchemy(app)
-sqlconnector.initialise_db(db)
+# sqlconnector.initialise_db(db)
 
 import routes.routes as routes
 
