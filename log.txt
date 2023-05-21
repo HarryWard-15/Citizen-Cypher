@@ -1,0 +1,744 @@
+* commit 90f1639a31ce78789b5e1f8751b03a5e51d0bdc0 (HEAD -> main, origin/main, origin/HEAD, heroku/main)
+| Author: Harry_Desktop <hward.1508@gmail.com>
+| Date:   Mon May 22 05:18:25 2023 +0800
+|
+|     readme and databse
+|
+* commit 3bec72b68d3f92cd415be7d9b6673f0360cc6bd9
+| Author: Harry_Desktop <hward.1508@gmail.com>
+| Date:   Mon May 22 04:55:26 2023 +0800
+|
+|     fixing the sql database not reloading
+|
+* commit a9f20a72935230ac0a1e9e7cb0ca9b261dfd0832
+| Author: Harry_Desktop <hward.1508@gmail.com>
+| Date:   Mon May 22 04:30:15 2023 +0800
+|
+|     game logic working
+|
+*   commit 6bc3477fb0e9bc5c1d50f6c5287d2585ef8a1dae
+|\  Merge: d16e482 e3b808b
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Mon May 22 03:26:23 2023 +0800
+| |
+| |     Merge pull request #26 from HarryWard-15/fixing-login-issues
+| |
+| |     Fixing login issues
+| |
+| * commit e3b808bc00c302a51e45e0578e83f50936443933 (origin/fixing-login-issues, fixing-login-issues)
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 03:25:59 2023 +0800
+| |
+| |     data validation
+| |
+| * commit 1200952f98baf8bf48ee2700a17ef2a637c2bf89
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 03:13:44 2023 +0800
+| |
+| |     dotenv files not giving permission to DB
+| |
+| * commit 210e660b817e37a972d185746958da0742cd819f
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Mon May 22 02:52:30 2023 +0800
+|
+|       adding env
+|
+*   commit d16e482d0ce5f1eb2cbed6149fe94783b229b0b9
+|\  Merge: 7084131 4b96d31
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Mon May 22 02:25:05 2023 +0800
+| |
+| |     Merge pull request #25 from HarryWard-15/securing-data
+| |
+| |     adding .env capability
+| |
+| | * commit 7d7c90100fe826fde67ac7ca97756636c84730b1 (securing-data)
+| |/  Author: Harry_Desktop <hward.1508@gmail.com>
+| |   Date:   Mon May 22 02:43:57 2023 +0800
+| |
+| |       adding env variables
+| |
+| * commit 4b96d315543ab8a4514bca0c775ae6f23d83faa2 (origin/securing-data)
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Mon May 22 02:24:42 2023 +0800
+|
+|       adding .env capability
+|
+*   commit 7084131dbee1ddfb5485ea27244061e9d8b391a1 (heroku-changes)
+|\  Merge: e9c06a2 d3a9108
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Mon May 22 02:03:38 2023 +0800
+| |
+| |     Merge pull request #24 from HarryWard-15/heroku-changes
+| |
+| |     Heroku changes
+| |
+| * commit d3a9108e3a21273c0561a758c4d82c0ef285f24b (origin/heroku-changes)
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 02:00:51 2023 +0800
+| |
+| |     more changes to procfile
+| |
+| * commit ed649d8532f6e37e6fbbeaea22da8e67cd8806c3
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:55:26 2023 +0800
+| |
+| |     more changes to procfile
+| |
+| * commit 4fd8d015d5e17b6c2424612fe928ad84393bb750
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:54:43 2023 +0800
+| |
+| |     more changes to procfile
+| |
+| * commit d07aaec473af1d1789b58db67fb7c2d4905f49f8
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:53:08 2023 +0800
+| |
+| |     more changes to procfile
+| |
+| * commit 229d68473b044dac759998f0025c914c8dbe4568
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:50:22 2023 +0800
+| |
+| |     more changes
+| |
+| * commit ee04fb7a83835b5c07ad95a4781cbecfa1b8a457
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:48:39 2023 +0800
+| |
+| |     more changes
+| |
+| * commit e4bc8762142104a859b3016df88c4eae041d41e6
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:44:54 2023 +0800
+| |
+| |     adding more requirements
+| |
+| * commit 3287da7657d5cdecc0919df6ea3276e9ea2d3941
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:39:24 2023 +0800
+| |
+| |     now all synced to cloud database instead of local
+| |
+| * commit 5cca73202eb8df942c1f1d448ecac4b1ec65ee05
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:10:34 2023 +0800
+| |
+| |     no db selected
+| |
+| * commit dbdf9dc488f264f0f27552a5b6979bff8c6d0558
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:04:23 2023 +0800
+| |
+| |     more double up code
+| |
+| * commit d04b419b994877ff64f4806063c1ccff3eecb411
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 01:02:48 2023 +0800
+| |
+| |     commenting out crossover code
+| |
+| * commit 6f815f1dc7f51822b3c1ce8065a89c164bf0b933
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 00:59:02 2023 +0800
+| |
+| |     changing app.py and sqlconnector to right DB
+| |
+| * commit 54923f25673a8efd1b0f033ef71367ebbf51a535
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Mon May 22 00:54:24 2023 +0800
+| |
+| |     connecting database
+| |
+| * commit dbad620c020def9d7b450ba00b659b787a1db0e1
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Sun May 21 23:44:28 2023 +0800
+| |
+| |     Procfile
+| |
+| * commit 4b4529772b31e5f2dc07756c4df085808e4624b1
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Sun May 21 23:40:54 2023 +0800
+|
+|       Procfile
+|
+*   commit e9c06a231266a5144031497e3a3e56cbf0113fee (file-structure)
+|\  Merge: 7848def 1f18611
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Sun May 21 23:24:31 2023 +0800
+| |
+| |     Merge pull request #23 from HarryWard-15/unit-testing
+| |
+| |     Implement Selenium testing and commenting on pages.
+| |
+| * commit 1f1861125b371d6d5dce4a0e38babe177a7226ba (origin/unit-testing)
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 17:29:52 2023 +0800
+| |
+| |     Commentate game JS
+| |
+| * commit f7146b27a9980afc9542bfec6fc33ad74f521907
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 17:20:41 2023 +0800
+| |
+| |     Comment all HTML files
+| |
+| * commit 4bf1f6f45a7f03ded5bd66a3fefc696e095ea75d
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 17:11:43 2023 +0800
+| |
+| |     Added comments for connector, routes and Selenium
+| |
+| * commit 0c8a3d8540dbdb15275eadaaab792b3e55a317d4
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 16:46:59 2023 +0800
+| |
+| |     Adding selenium to requirements
+| |
+| * commit 72dff0188c35054d526a3ff2d5dbed8a3f9b0ed1
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 15:51:02 2023 +0800
+| |
+| |     Full selenium user auth test
+| |
+| * commit 979f3a3ebde1fda5820f1f8d64fe1ecb6ea8f86d
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 13:53:52 2023 +0800
+| |
+| |     sample data created via sqlalchemy
+| |
+| * commit 179a97a1c3559ecf4d377c92f173eba9dbbc9b99
+|/  Author: Nathan Pham <nathanphxm@gmail.com>
+|   Date:   Sun May 21 13:53:36 2023 +0800
+|
+|       create test.py
+|
+*   commit 7848def04fd38b77b8136d1aa7638ecd11230dab
+|\  Merge: 3ec95e4 b401f10
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Sun May 21 12:11:21 2023 +0800
+| |
+| |     Merge pull request #22 from HarryWard-15/get-history
+| |
+| |     get history + last action/day counter groundwork
+| |
+| * commit b401f102c881527ca9795d5ced79e45547656192 (origin/get-history)
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 00:50:47 2023 +0800
+| |
+| |     attempting to get clicked button text from html
+| |
+| * commit 176c023f5af98160dcf6c91825f0efbc2e38a8f4
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sun May 21 00:19:32 2023 +0800
+| |
+| |     Add working click counter
+| |
+| * commit 9ac8be62ef4b02a108c9f5824139aca9f5d36a2e
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 23:46:59 2023 +0800
+| |
+| |     #2
+| |
+| * commit 307cbbf967a2b5449c5294be66ce6b0beb787194
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 23:46:51 2023 +0800
+| |
+| |     Add square for action history?
+| |
+| * commit 72e9bc96ecd9d7e41ed2b3349df160691bfaf42e
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 23:12:34 2023 +0800
+| |
+| |     Continuing to polish up CSS and wording on HTML
+| |
+| *   commit a5abf1ad7a3046e2a2152b0058316c662f9bb96d
+| |\  Merge: d287cb4 1724b2c
+| | | Author: Nathan Pham <nathanphxm@gmail.com>
+| | | Date:   Sat May 20 22:54:46 2023 +0800
+| | |
+| | |     Merge branch 'get-history' of https://github.com/HarryWard-15/Citizen-Cypher into get-history
+| | |
+| | * commit 1724b2c243cd82b0838f1508bde87380acc2035b
+| | | Author: Nathan Pham <30525277+nathanphxm@users.noreply.github.com>
+| | | Date:   Sat May 20 13:22:23 2023 +0800
+| | |
+| | |     Update README.md
+| | |
+| * | commit d287cb47a10c69a45a8d0a00fe2ad7fccd0abad1
+| |/  Author: Nathan Pham <nathanphxm@gmail.com>
+| |   Date:   Sat May 20 22:54:36 2023 +0800
+| |
+| |       ADDING END GAME DATA TO PREVIOUSGAME DB!111111111
+| |
+| *   commit 4b3a9081412c7ef2e6c4bb998efa0d6fb5011cf7
+| |\  Merge: bcfea1e 3ec95e4
+| |/  Author: Nathan Pham <nathanphxm@gmail.com>
+|/|   Date:   Sat May 20 13:14:16 2023 +0800
+| |
+| |       Merge branch 'main' of https://github.com/HarryWard-15/Citizen-Cypher into get-history
+| |
+* |   commit 3ec95e4b6a2e364903976da6c9b9ef86d758b727
+|\ \  Merge: f1791e3 f1b8bb7
+| | | Author: Harry Ward <hward.1508@gmail.com>
+| | | Date:   Fri May 19 19:34:05 2023 +0800
+| | |
+| | |     Merge pull request #20 from HarryWard-15/file-structure
+| | |
+| | |     File structure
+| | |
+| * |   commit f1b8bb713c8054ed777f6b97b361fdea1ec6c356 (origin/file-structure)
+| |\ \  Merge: 88f3ae3 f1791e3
+| |/ /  Author: Harry_Desktop <hward.1508@gmail.com>
+|/| |   Date:   Fri May 19 19:32:15 2023 +0800
+| | |
+| | |       Merge branch 'main' of github.com:HarryWard-15/CITS3403-Project into file-structure
+| | |
+* | |   commit f1791e322306ec4aaf99760c84e836a600ddce88 (loginpage)
+|\ \ \  Merge: 50f3a13 3579bae
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 19:15:35 2023 +0800
+| | | |
+| | | |     Merge pull request #19 from HarryWard-15/HarryWard-15-patch-6
+| | | |
+| | | |     Update README.md
+| | | |
+| * | | commit 3579bae27ee252f5411012163e1395de6aa1ac3c
+|/ / /  Author: Harry Ward <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 19:15:25 2023 +0800
+| | |
+| | |       Update README.md
+| | |
+* | |   commit 50f3a13263c97e50d8e819b60794d0908ebb1633
+|\ \ \  Merge: d6e08c3 e3acc91
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 19:13:05 2023 +0800
+| | | |
+| | | |     Merge pull request #18 from HarryWard-15/HarryWard-15-patch-5
+| | | |
+| | | |     Update README.md
+| | | |
+| * | | commit e3acc91c55277af7365be2ae30e6e9220582c7a5
+|/ / /  Author: Harry Ward <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 19:12:47 2023 +0800
+| | |
+| | |       Update README.md
+| | |
+* | |   commit d6e08c36a7e5c9bf10a2c02349f169a71f579e9a
+|\ \ \  Merge: cfdb8a4 944aa9d
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 19:00:43 2023 +0800
+| | | |
+| | | |     Merge pull request #17 from HarryWard-15/HarryWard-15-patch-4
+| | | |
+| | | |     Update README.md
+| | | |
+| * | | commit 944aa9dd2ffdf8b7da79e6c5c2a8150b77c27469
+|/ / /  Author: Harry Ward <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 19:00:35 2023 +0800
+| | |
+| | |       Update README.md
+| | |
+* | |   commit cfdb8a44608730dc9581cea656030e4cb7841d73
+|\ \ \  Merge: d4dfa04 8a45188
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 18:59:44 2023 +0800
+| | | |
+| | | |     Merge pull request #16 from HarryWard-15/HarryWard-15-patch-3
+| | | |
+| | | |     Update README.md
+| | | |
+| * | | commit 8a4518871efc23c1499c74000efda4046bfbf5a3
+|/ / /  Author: Harry Ward <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 18:59:32 2023 +0800
+| | |
+| | |       Update README.md
+| | |
+* | |   commit d4dfa04259cde3188be402fa27d5d12981860b0e
+|\ \ \  Merge: 33822e9 f49f652
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 18:57:38 2023 +0800
+| | | |
+| | | |     Merge pull request #15 from HarryWard-15/HarryWard-15-patch-2
+| | | |
+| | | |     Update README.md
+| | | |
+| * | | commit f49f6522efebb2bd0752e583cbefe9a8837e5652
+|/ / /  Author: Harry Ward <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 18:57:29 2023 +0800
+| | |
+| | |       Update README.md
+| | |
+* | |   commit 33822e93f6e3f9164971cc95044fd4c3d89e8461
+|\ \ \  Merge: 133e12e ffd3a6f
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 18:56:46 2023 +0800
+| | | |
+| | | |     Merge pull request #14 from HarryWard-15/HarryWard-15-patch-1
+| | | |
+| | | |     Update README.md
+| | | |
+| * | | commit ffd3a6fea39801f4b804bc903a651b7e62bda93b
+|/ / /  Author: Harry Ward <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 18:56:36 2023 +0800
+| | |
+| | |       Update README.md
+| | |
+* | |   commit 133e12ea1fa462bb5bc97c10e1d7464ead5f9f93
+|\ \ \  Merge: 9ae6469 902a533
+| | | | Author: Harry Ward <hward.1508@gmail.com>
+| | | | Date:   Fri May 19 18:51:26 2023 +0800
+| | | |
+| | | |     Merge pull request #13 from HarryWard-15/file-structure
+| | | |
+| | | |     file restructure
+| | | |
+| | * | commit 88f3ae37a52b0390665e6fff182def5f660f4509
+| |/ /  Author: Harry_Desktop <hward.1508@gmail.com>
+| | |   Date:   Fri May 19 19:32:02 2023 +0800
+| | |
+| | |       fixing signup page not redirecting
+| | |
+| * | commit 902a53371edd89a757c22b8bf129774795b1da6d
+|/ /  Author: Harry_Desktop <hward.1508@gmail.com>
+| |   Date:   Fri May 19 18:50:59 2023 +0800
+| |
+| |       file restructure
+| |
+| * commit bcfea1ef87f57f25fdab1faa8efb56c52e72a866
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 13:10:58 2023 +0800
+| |
+| |     clean up flask import statement
+| |
+| * commit c8ba757333de2bd63f55a8669a06e1c0e6b8d814
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 13:08:17 2023 +0800
+| |
+| |     implement endGame function returning JSON
+| |
+| * commit c3b982c9c1fb24a649c9297d1fc97c5091d878ab
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 12:50:07 2023 +0800
+| |
+| |     add JS death reason string, history html format
+| |
+| * commit 6ae8353523e1d8cef23964e0aa40351e0bc89792
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 12:49:32 2023 +0800
+| |
+| |     add JS var for death reason, history page format
+| |
+| * commit 64bb429963a46822e63685179db9abb7db693b37
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 11:52:21 2023 +0800
+| |
+| |     adjust game ID, add line breaks
+| |
+| * commit 382d81f1a6a578e8cc5eb249ef823a1392ff036a
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Sat May 20 11:50:38 2023 +0800
+| |
+| |     printing each game entry in a nicer format
+| |
+| * commit 247fb4c8b13a4bf95b8069fef6dfe50291f49e7c
+|/  Author: Nathan Pham <nathanphxm@gmail.com>
+|   Date:   Sat May 20 11:32:28 2023 +0800
+|
+|       implement basic get data for history.html per user
+|
+*   commit 9ae6469f944c43eb26ed92e5c080b22c9e7640bc
+|\  Merge: 895e971 72a891b
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Fri May 19 18:19:22 2023 +0800
+| |
+| |     Merge pull request #12 from HarryWard-15/input-sanitisation-and-history
+| |
+| |     Input sanitisation and history
+| |
+| *   commit 72a891bf150bee18c561f70a0f7236df89803d77 (origin/input-sanitisation-and-history)
+| |\  Merge: ba0d1e9 895e971
+| |/  Author: Harry Ward <hward.1508@gmail.com>
+|/|   Date:   Fri May 19 18:19:09 2023 +0800
+| |
+| |       Merge branch 'main' into input-sanitisation-and-history
+| |
+* |   commit 895e9718be7b6df8d7c8353ef03bed07a518d03c
+|\ \  Merge: 3cd81b7 6cd6c52
+| | | Author: Harry Ward <hward.1508@gmail.com>
+| | | Date:   Fri May 19 18:13:13 2023 +0800
+| | |
+| | |     Merge pull request #11 from HarryWard-15/game-logic
+| | |
+| | |     game logic
+| | |
+| | * commit ba0d1e9a1ab77e7a1a1f6880d6b2de11d57455a8
+| | | Author: Nathan Pham <nathanphxm@gmail.com>
+| | | Date:   Fri May 19 18:13:51 2023 +0800
+| | |
+| | |     Minor whitespace clean up
+| | |
+| | * commit ffbd12e0a293e1c4e9dab3cda566ad6e07d0855c
+| |/  Author: Nathan Pham <nathanphxm@gmail.com>
+|/|   Date:   Fri May 19 17:48:14 2023 +0800
+| |
+| |       add history page, adjust CSS for buttons
+| |
+| | * commit 8607b586af7a5ee12d11da2f13d4067a75ce0c46 (origin/game-logic, game-logic)
+| |/  Author: Harry_Desktop <hward.1508@gmail.com>
+| |   Date:   Fri May 19 18:47:10 2023 +0800
+| |
+| |       file restructure
+| |
+| * commit 6cd6c526999fa21c0fb674f0c0e9ca2b42624084
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Fri May 19 18:12:03 2023 +0800
+|
+|       game logic
+|
+*   commit 3cd81b7f1683716021bca29160be5e5a33421a8b
+|\  Merge: 76400f9 d9c3481
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Fri May 19 15:57:00 2023 +0800
+| |
+| |     Merge pull request #10 from HarryWard-15/auth_with_tweaks
+| |
+| |     CSS tidy up and polish
+| |
+| * commit d9c3481e9756dd4d4cac54cfb8e65c69ca458a0f (origin/auth_with_tweaks)
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Fri May 19 15:50:19 2023 +0800
+| |
+| |     Delete base html backup
+| |
+| * commit 51f5ac3c0c8ef3aef2db517204fc4c95749ec0b9
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Fri May 19 15:48:53 2023 +0800
+| |
+| |     Tweaking front end CSS
+| |
+* |   commit 76400f97e6f0c6359fef6462e28f9696681f9953
+|\ \  Merge: d5e8ea5 a06e3bd
+| | | Author: Harry Ward <hward.1508@gmail.com>
+| | | Date:   Fri May 19 15:47:58 2023 +0800
+| | |
+| | |     Merge pull request #9 from HarryWard-15/file-structure
+| | |
+| | |     moving routing into seperate folder
+| | |
+| * | commit a06e3bd985bbd3ac65c594c1f682ed11ba261abc
+| | | Author: Harry_Desktop <hward.1508@gmail.com>
+| | | Date:   Fri May 19 15:46:44 2023 +0800
+| | |
+| | |     adding models
+| | |
+| * | commit d1a7da2c838a5f518bbddaf6d9228abaf33e3095
+| | | Author: Harry_Desktop <hward.1508@gmail.com>
+| | | Date:   Fri May 19 15:43:30 2023 +0800
+| | |
+| | |     adding models
+| | |
+| * | commit 7b27a2e6c251b7eb94bcbb446b19cd928db817cd (Setting-up-database)
+|/ /  Author: Harry_Desktop <hward.1508@gmail.com>
+| |   Date:   Fri May 19 15:27:10 2023 +0800
+| |
+| |       moving routing into seperate folder
+| |
+* | commit d5e8ea5210fde50e90e732cf57bcaab64a2fb7a6
+|\| Merge: 5c40456 fbd1ded
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Fri May 19 14:50:12 2023 +0800
+| |
+| |     Merge pull request #8 from HarryWard-15/auth_with_tweaks
+| |
+| |     tweaked everything - basic user auth working
+| |
+| * commit fbd1dedce053615b77bc44839e99a8168855ac76
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Thu May 18 20:39:21 2023 +0800
+| |
+| |     not all files committed. see last commit
+| |
+| * commit 448d9fba9352f3c859ca3ac1b1f2495a47df4741
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Thu May 18 20:38:40 2023 +0800
+| |
+| |     tweaking CSS & sample game elements
+| |
+| * commit a2c0bd57f32ecd12534958835635805260d31c02
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Thu May 18 18:31:35 2023 +0800
+| |
+| |     lots more frontend changes & cleaning up repo
+| |
+| * commit 775e27647715c2bf859a9ab2810ab87907ce029a
+| | Author: Nathan Pham <nathanphxm@gmail.com>
+| | Date:   Thu May 18 17:50:36 2023 +0800
+| |
+| |     created connector module
+| |
+| * commit 53951ef72331a86351237cd6083bd80739451e1d
+|/  Author: Nathan Pham <nathanphxm@gmail.com>
+|   Date:   Thu May 18 17:13:40 2023 +0800
+|
+|       tweaked everything - basic user auth working
+|
+*   commit 5c40456c563161847c5a60523f81de85a025e7cd
+|\  Merge: da719c2 c10c1cf
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Sat May 13 19:39:50 2023 +0800
+| |
+| |     Merge pull request #7 from HarryWard-15/Setting-up-database
+| |
+| |     setup file
+| |
+* | commit da719c2af87f174b92334599275919d842b72e24
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Sat May 13 02:39:28 2023 +0800
+| |
+| |     Update README.md
+| |
+| | * commit 3a9a68cfd27afbc1018801471ae7e592d8b126d4 (refs/stash)
+| |/| Merge: c10c1cf 5ff1c92
+| | | Author: Harry_Desktop <hward.1508@gmail.com>
+| | | Date:   Fri May 19 14:51:10 2023 +0800
+| | |
+| | |     WIP on Setting-up-database: c10c1cf setup file
+| | |
+| | * commit 5ff1c9255ee3e978263a29ac1277203a3703d560
+| |/  Author: Harry_Desktop <hward.1508@gmail.com>
+| |   Date:   Fri May 19 14:51:10 2023 +0800
+| |
+| |       index on Setting-up-database: c10c1cf setup file
+| |
+| * commit c10c1cf13deb001e2ec545375d7ee7dd79d819c8 (origin/Setting-up-database)
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Sat May 13 19:38:57 2023 +0800
+|
+|       setup file
+|
+* commit d5ba6043666d5b56ec1b58aa1d18ce59a6a0be4a
+| Author: Harry Ward <hward.1508@gmail.com>
+| Date:   Sat May 13 02:37:47 2023 +0800
+|
+|     Delete flask_app directory
+|
+*   commit 6cf0e8f55608f8cee785d4c4b3ed80f949830fdd
+|\  Merge: 8e4cdbb 374eb49
+| | Author: Harry Ward <hward.1508@gmail.com>
+| | Date:   Sat May 13 02:37:19 2023 +0800
+| |
+| |     Merge pull request #6 from HarryWard-15/Setting-up-database
+| |
+| |     setting up the database
+| |
+| *   commit 374eb491d52ab073d406e47b886dd06fcbdbbd4d
+| |\  Merge: 9033678 8e4cdbb
+| |/  Author: Harry_Desktop <hward.1508@gmail.com>
+|/|   Date:   Sat May 13 02:36:57 2023 +0800
+| |
+| |       fixing merge conflicts
+| |
+* |   commit 8e4cdbbc266d97b12dd94b061c2bdb8b90db2f3c
+|\ \  Merge: 4152f4f 56b9185
+| | | Author: Harry Ward <95899759+HarryWard-15@users.noreply.github.com>
+| | | Date:   Fri Apr 7 19:16:47 2023 +0800
+| | |
+| | |     Merge pull request #5 from HarryWard-15/loginpage
+| | |
+| | |     styling login page
+| | |
+| * | commit 56b91851cc2f5c043ea4cba4c7ebac818f9f896a (origin/loginpage)
+|/ /  Author: Harry_Desktop <hward.1508@gmail.com>
+| |   Date:   Fri Apr 7 19:15:52 2023 +0800
+| |
+| |       styling login page
+| |
+| * commit 9033678fc464a389bceecde25e8b00b1fa52c5a7
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Sat May 13 02:31:09 2023 +0800
+|
+|       setting up the database
+|
+* commit 4152f4f396cc3cad6976870bae73dcedf0976108
+| Author: Harry_Desktop <hward.1508@gmail.com>
+| Date:   Fri Apr 7 00:09:35 2023 +0800
+|
+|     ??
+|
+| * commit 569db0468981dcb55c9006416869cd72c57c49c2 (Restructuring)
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Fri Apr 7 00:05:41 2023 +0800
+|
+|       adding 3 pages as per grading
+|
+| *   commit 69e62bba5a3bc77122c85e551b8bad383b1f39e1 (origin/Restructuring)
+| |\  Merge: f9c98ba 3fb825e
+| |/  Author: Harry Ward <95899759+HarryWard-15@users.noreply.github.com>
+|/|   Date:   Fri Apr 7 00:03:30 2023 +0800
+| |
+| |       Merge pull request #4 from HarryWard-15/main
+| |
+| |       mergin
+| |
+* | commit 3fb825e1ed67c92abf4d939ca4d97474fc74a392
+|\| Merge: 4f0e044 f9c98ba
+| | Author: Harry Ward <95899759+HarryWard-15@users.noreply.github.com>
+| | Date:   Fri Apr 7 00:02:44 2023 +0800
+| |
+| |     Merge pull request #3 from HarryWard-15/Restructuring
+| |
+| |     smoothing out routing
+| |
+| * commit f9c98ba0f7331f1c6e9228548d95fb61b56076a9
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Fri Apr 7 00:02:04 2023 +0800
+| |
+| |     smoothing out routint
+| |
+* | commit 4f0e0448975866b8dff46413d2155a912e9e0f05
+|\| Merge: f5f7a5b 182bc9c
+| | Author: Harry Ward <95899759+HarryWard-15@users.noreply.github.com>
+| | Date:   Thu Apr 6 23:59:49 2023 +0800
+| |
+| |     Merge pull request #2 from HarryWard-15/Restructuring
+| |
+| |     restructuring files and adding flask
+| |
+| * commit 182bc9c3e635dc16b72d2c025280717f3001a1a9
+| | Author: Harry_Desktop <hward.1508@gmail.com>
+| | Date:   Thu Apr 6 23:59:19 2023 +0800
+| |
+| |     smoothing out routint
+| |
+| * commit e5d62fb619a80d8743ff4f8c976fc46207fc67c1
+|/  Author: Harry_Desktop <hward.1508@gmail.com>
+|   Date:   Thu Apr 6 23:38:11 2023 +0800
+|
+|       restructuring files and adding flask
+|
+| * commit ef0c95f20621c165cd470666c433b0687b433514 (origin/tweaked-initial)
+|/  Author: Nathan Pham <nathanphxm@gmail.com>
+|   Date:   Thu Mar 23 09:16:08 2023 +0800
+|
+|       created test text file
+|
+*   commit f5f7a5b1b6eea9421747b3db217e9d2a624018c9
+|\  Merge: 539650b 5170de3
+| | Author: Harry Ward <95899759+HarryWard-15@users.noreply.github.com>
+| | Date:   Thu Mar 23 09:08:11 2023 +0800
+| |
+| |     Merge pull request #1 from HarryWard-15/intial-templates
+| |
+| |     linking public folder
+| |
+| * commit 5170de3de8d2edf2f0405e06eba936a6304c4b6e (origin/intial-templates)
+|/  Author: HarryWard-15 <hward.1508@gmail.com>
+|   Date:   Thu Mar 23 09:03:45 2023 +0800
+|
+|       linking public folder
+|
+* commit 539650bd0f8823ecd034fd5b90c736550bc8ac5d
+  Author: Harry Ward <95899759+HarryWard-15@users.noreply.github.com>
+  Date:   Thu Mar 23 08:47:55 2023 +0800
