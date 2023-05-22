@@ -52,7 +52,6 @@ def login():
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     msg = ""
-    my_cursor = sqlconnector.create_cursor()
     if request.method == "POST":
         realname = request.form["realname"]
         email = request.form["email"]
