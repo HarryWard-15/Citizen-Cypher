@@ -17,6 +17,8 @@ app.app_context().push()
 
 db = SQLAlchemy(app)
 
+sqlconnector.cnx
+
 # sqlconnector.initialise_db(db)
 
 import routes.routes as routes
