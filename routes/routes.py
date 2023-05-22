@@ -58,10 +58,12 @@ def signup():
         email = request.form["email"]
         password = request.form["password"]
 
-        query = 'SELECT * FROM user WHERE email = "' + email + '"'
+        account = User.query.filter_by(email=email).first()
 
-        my_cursor.execute(query)
-        account = my_cursor.fetchone()
+        # query = 'SELECT * FROM user WHERE email = "' + email + '"'
+
+        # my_cursor.execute(query)
+        # account = my_cursor.fetchone()
 
         if account:
             msg = "This email already exists in the database!"
